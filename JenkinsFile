@@ -15,7 +15,9 @@ pipeline {
   }
 	post {
 		success{
-  sh 'echo 'Success''	
+  sh '''
+  echo 'Success'
+  '''
 	}
 }
 }
