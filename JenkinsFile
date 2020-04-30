@@ -1,0 +1,20 @@
+  
+pipeline {
+  options {
+	  timeout(time: 1, unit: 'HOURS')
+}
+  agent any
+  stages {
+    stage('Code Build and Deploy') {
+          steps {
+		  timeout(time: 1, unit: 'MINUTES') {
+		  sh "echo 'Hello World'"
+		  }
+	  }
+	}
+  }
+	post {
+		success{
+  sh 'echo 'Success'		
+	}
+}
