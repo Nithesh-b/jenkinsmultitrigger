@@ -1,4 +1,3 @@
-  
 pipeline {
   options {
 	  timeout(time: 1, unit: 'HOURS')
@@ -10,19 +9,6 @@ pipeline {
 		  timeout(time: 1, unit: 'MINUTES') {
 		  sh "echo 'Hello World'"
 		  }
-		  }
-		  }
-	stage('Trigger job') {
-          steps {
-		  sh "echo 'Hello World'"
-		  }
 	  }
-  }
-	post {
-		success{
-  sh '''
-  echo 'Success'
-  '''
 	}
-}
-}
+  }
