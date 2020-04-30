@@ -10,6 +10,10 @@ pipeline {
 		  timeout(time: 1, unit: 'MINUTES') {
 		  sh "echo 'Hello World'"
 		  }
+	stage('Trigger job') {
+          steps {
+		  sh "echo 'Hello World'"
+		  
 	  }
 	}
   }
