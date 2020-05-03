@@ -11,9 +11,10 @@ pipeline {
 		  }
 	  }
 	}
-	stage ('Trigger another job') 
+	stage ('Trigger another job') {
 	steps{
 	             build job: 'version'
 		     }
   	}
 	}
+}
