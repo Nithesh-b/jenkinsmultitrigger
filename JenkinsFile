@@ -14,7 +14,7 @@ pipeline {
 	stage ('Trigger another job') 
 	steps{
 	             build job: 'version'
-  }
+		     }
   }
 }
 }
