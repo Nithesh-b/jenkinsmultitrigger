@@ -3,6 +3,8 @@ pipeline {
 	  timeout(time: 1, unit: 'HOURS')
 }
   agent any
+  parameters {
+      choice(name: "mode", choices: ["debug", "deploy", "release"],    description: "Mode (debug|release|deploy)")
   stages {
     stage('Code Build and Deploy') {
           steps {
