@@ -16,9 +16,7 @@ pipeline {
 	}
 	stage ('Trigger another job') {
 	steps{
-	             build job: 'version', parameters: [
-                [$class : 'StringParameterValue', name: 'mode', value: 'debug']
-                ]
+	             build job: 'version', parameters: [(name: 'mode', value: String.valueOf(mode))]
 		     }
   	}
 	}
