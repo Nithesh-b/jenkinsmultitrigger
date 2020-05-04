@@ -5,6 +5,7 @@ pipeline {
   agent any
   parameters {
       choice(name: "mode", choices: ["debug", "deploy", "release"],    description: "Mode (debug|release|deploy)")
+      choice(name: "color", choices: ["red", "blue", "green"],    description: "Mode (red|blue|green)")
       }
   stages {
     stage('Code Build and Deploy') {
@@ -16,7 +17,7 @@ pipeline {
 	}
 	stage ('Trigger another job') {
 	steps{
-	             build job: 'version', parameters: [string(name: 'mode', value: String.valueOf(mode))]
+	             build job: 'version', parameters: [string(name: 'mode', value: String.valueOf(mode), name: 'color', value: String.valueOf(color))]
 		     }
   	}
 	}
