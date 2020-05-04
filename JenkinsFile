@@ -4,8 +4,8 @@ pipeline {
 }
   agent any
   parameters {
-      [choice(name: "mode", choices: ["debug", "deploy", "release"],    description: "Mode (debug|release|deploy)"),
-      choice(name: "color", choices: ["red", "blue", "green"],    description: "Mode (red|blue|green)")]
+      choice(name: "mode", choices: ["debug", "deploy", "release"],    description: "Mode (debug|release|deploy)")
+      choice(name: "color", choices: ["red", "blue", "green"],    description: "Mode (red|blue|green)")
       }
   stages {
     stage('Code Build and Deploy') {
