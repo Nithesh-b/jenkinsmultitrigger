@@ -17,7 +17,7 @@ pipeline {
 	}
 	stage ('Trigger another job') {
 	steps{
-	             build job: 'version', parameters: [[string(name: 'mode', value: String.valueOf(mode)], [string(name: 'color', value: String.valueOf(color))]]
+	             build job: 'version', parameters: [[string(name: 'mode', value: String.valueOf(mode))], [string(name: 'color', value: String.valueOf(color))]]
 		     }
   	}
 	}
